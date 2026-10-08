@@ -1,15 +1,23 @@
 <?php
 
-$codigo = $_POST["codigo"];
-$destinatario = $_POST["destinatario"];
-$cidade = $_POST["cidade"];
-$peso = $_POST["peso"];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-echo "<h1>Entrega Cadastrada</h1>";
+    $codigo = $_POST["codigo"];
+    $destinatario = $_POST["destinatario"];
+    $cidade = $_POST["cidade"];
+    $peso = $_POST["peso"];
 
-echo "<p><strong>Código:</strong> " . htmlspecialchars($codigo) . "</p>";
-echo "<p><strong>Destinatário:</strong> " . htmlspecialchars($destinatario) . "</p>";
-echo "<p><strong>Cidade:</strong> " . htmlspecialchars($cidade) . "</p>";
-echo "<p><strong>Peso:</strong> " . htmlspecialchars($peso) . " kg</p>";
+    echo "<h1>Cadastro de Entrega</h1>";
+
+    echo "Código: " . $codigo . "<br>";
+    echo "Destinatário: " . $destinatario . "<br>";
+    echo "Cidade: " . $cidade . "<br>";
+    echo "Peso: " . $peso . " kg<br>";
+
+} else {
+
+    echo "Nenhum dado foi enviado.";
+
+}
 
 ?>
